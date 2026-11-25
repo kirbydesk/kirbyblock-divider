@@ -1,0 +1,66 @@
+<?php return array(
+
+	'kirbyblock-divider.name' => 'Trennlinie',
+	'kirbyblock-divider.ai' => 'Eine Linie zwischen zwei Abschnitten, optional mit einem Zeichen oder kurzen Text in der Mitte. Sie markiert einen Themenwechsel und gibt der Seite Ruhe.',
+
+	'kirbyblock-divider.style' => 'Linienstil',
+	'kirbyblock-divider.linestyle.solid' => 'Durchgezogen',
+	'kirbyblock-divider.linestyle.dashed' => 'Gestrichelt',
+	'kirbyblock-divider.linestyle.dotted' => 'Gepunktet',
+	'kirbyblock-divider.linestyle.double' => 'Doppelt',
+	'kirbyblock-divider.linestyle.fade' => 'Auslaufend',
+	'kirbyblock-divider.linestyle.wavy' => 'Gewellt',
+
+	'kirbyblock-divider.center' => 'Mitte',
+	'kirbyblock-divider.linecenter.none' => 'Nichts',
+	'kirbyblock-divider.linecenter.circle' => 'Kreis',
+	'kirbyblock-divider.linecenter.diamond' => 'Raute',
+	'kirbyblock-divider.linecenter.orbit' => 'Orbit',
+	'kirbyblock-divider.linecenter.label' => 'Text',
+	'kirbyblock-divider.label' => 'Text in der Mitte',
+
+	'kirbyblock-divider.color' => 'Farbe',
+	'kirbyblock-divider.linecolor.help' => 'Die Farben legst du im Project Wizard je Farbvariante fest.',
+	'kirbyblock-divider.linecolor.line' => 'Linienfarbe',
+	'kirbyblock-divider.linecolor.gradient' => 'Verlauf',
+
+	'kirbyblock-divider.effect' => 'Effekt',
+	'kirbyblock-divider.lineeffect.help' => 'Fließen wirkt bei gestrichelten, gepunkteten und gewellten Linien.',
+	'kirbyblock-divider.lineeffect.none' => 'Keiner',
+	'kirbyblock-divider.lineeffect.draw' => 'Einlaufen',
+	'kirbyblock-divider.lineeffect.glow' => 'Leuchten',
+	'kirbyblock-divider.lineeffect.flow' => 'Fließen',
+
+	'kirbyblock-divider.stroke' => 'Strichstärke',
+	'kirbyblock-divider.opacity' => 'Deckkraft',
+	'kirbyblock-divider.lineopacity.help' => 'Gilt für Linie und Mitte. Weiß mit 50 % auf Blau ergibt zum Beispiel Hellblau.',
+
+	'kirbyblock-divider.width' => 'Breite',
+	'kirbyblock-divider.linewidth.short' => 'Kurz',
+	'kirbyblock-divider.linewidth.content' => 'Wie der Text',
+	'kirbyblock-divider.linewidth.grid' => 'Raster',
+	'kirbyblock-divider.linewidth.full' => 'Bildschirmrand',
+
+	'kirbyblock-divider.align' => 'Ausrichtung',
+	'kirbyblock-divider.align.help' => 'Nur bei kurzer Linie oder Textbreite.',
+	'kirbyblock-divider.align.left' => 'Links',
+	'kirbyblock-divider.align.center' => 'Mitte',
+	'kirbyblock-divider.align.right' => 'Rechts',
+	/* Project Wizard › Divider › Design */
+	'prw.valuegroup.divider' => 'Linie',
+	'prw.prop.line-color' => 'Linienfarbe',
+	'prw.prop.line-color-end' => 'Verlauf bis',
+	'prw.prop.label-color' => 'Text in der Mitte',
+	'prw.prop.line-short-width' => 'Breite „Kurz“',
+	'prw.prop.line-content-width' => 'Breite „Wie der Text“',
+	'prw.prop.line-center-gap' => 'Abstand zur Mitte',
+	/* Project Wizard › Divider › Start values */
+	'prw.contentfield.divider' => 'Linie',
+	'prw.property.linestyle' => 'Linienstil',
+	'prw.property.linecenter' => 'Mitte',
+	'prw.property.linecolor' => 'Farbe',
+	'prw.property.linewidth' => 'Breite',
+	'prw.property.linestroke' => 'Strichstärke (px)',
+	'prw.property.lineopacity' => 'Deckkraft (%)',
+	'prw.property.lineeffect' => 'Effekt',
+);

@@ -1,0 +1,87 @@
+/* DO NOT MODIFY THIS FILE - Override in site/patches/css/kirbyblock-divider/_styles.css */
+/*-----------------------------------------------------------------------------
+	Colours per colour variant (Project Wizard › Divider)
+-----------------------------------------------------------------------------*/
+section[data-block="divider"] { --pw-divider-color: var(--pwdivider-line-color); --pw-divider-end: var(--pwdivider-line-color-end); --pw-divider-label: var(--pwdivider-label-color); }
+section[data-block="divider"][data-style="variant"] { --pw-divider-color: var(--pwdivider-line-color-variant); --pw-divider-end: var(--pwdivider-line-color-end-variant); --pw-divider-label: var(--pwdivider-label-color-variant); }
+section[data-block="divider"][data-style="variant2"] { --pw-divider-color: var(--pwdivider-line-color-variant2); --pw-divider-end: var(--pwdivider-line-color-end-variant2); --pw-divider-label: var(--pwdivider-label-color-variant2); }
+section[data-block="divider"][data-style="variant3"] { --pw-divider-color: var(--pwdivider-line-color-variant3); --pw-divider-end: var(--pwdivider-line-color-end-variant3); --pw-divider-label: var(--pwdivider-label-color-variant3); }
+
+/*-----------------------------------------------------------------------------
+	The line: one line, or two around its centre (circle, diamond, orbit, text);
+	stroke and opacity per block, the opacity for the line and its centre
+-----------------------------------------------------------------------------*/
+.pw-divider {
+	--s: var(--pw-divider-stroke, 1px);
+	--c: var(--pw-divider-color, currentColor);
+	display: flex;
+	align-items: center;
+	gap: var(--pwdivider-line-center-gap, 1rem);
+	width: 100%;
+	color: var(--c);
+}
+.pw-divider > * { opacity: var(--pw-divider-opacity, 1); }
+.pw-divider-line { flex: 1; min-width: 0; height: var(--s); background-position: 0 50%; background-repeat: repeat-x; }
+.pw-divider-center { flex: none; display: flex; align-items: center; justify-content: center; }
+.pw-divider-center svg { display: block; overflow: visible; }
+.pw-divider-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; color: var(--pw-divider-label, currentColor); }
+
+/* width: short, as wide as the text, the grid, or out to the screen's edge */
+.pw-divider[data-line-width="short"] { max-width: var(--pwdivider-line-short-width, 8rem); }
+.pw-divider[data-line-width="content"] { max-width: var(--pwdivider-line-content-width, 45rem); }
+.pw-divider[data-line-width="full"] { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); }
+.pw-divider:is([data-line-width="short"], [data-line-width="content"])[data-line-align="center"] { margin-inline: auto; }
+.pw-divider:is([data-line-width="short"], [data-line-width="content"])[data-line-align="right"] { margin-left: auto; }
+
+/* styles */
+.pw-divider[data-line-style="solid"] .pw-divider-line { background: var(--c); }
+.pw-divider[data-line-style="dashed"] .pw-divider-line { background-image: repeating-linear-gradient(90deg, var(--c) 0 calc(var(--s) * 5), transparent calc(var(--s) * 5) calc(var(--s) * 9)); background-size: calc(var(--s) * 9) 100%; }
+.pw-divider[data-line-style="dotted"] .pw-divider-line { background-image: radial-gradient(circle at center, var(--c) 0 calc(var(--s) * .5), transparent calc(var(--s) * .5 + .5px)); background-size: calc(var(--s) * 3) var(--s); }
+.pw-divider[data-line-style="double"] .pw-divider-line { height: calc(var(--s) * 3 + 2px); background: linear-gradient(var(--c), var(--c)) 0 0 / 100% var(--s) no-repeat, linear-gradient(var(--c), var(--c)) 0 100% / 100% var(--s) no-repeat; }
+.pw-divider[data-line-style="fade"] .pw-divider-line:first-child { background: linear-gradient(90deg, transparent, var(--c)); }
+.pw-divider[data-line-style="fade"] .pw-divider-line:last-child { background: linear-gradient(90deg, var(--c), transparent); }
+.pw-divider[data-line-style="fade"] .pw-divider-line:only-child { background: linear-gradient(90deg, transparent, var(--c) 30%, var(--c) 70%, transparent); }
+/* (the wave: a mask in the line's colour, so it follows every colour variant) */
+.pw-divider[data-line-style="wavy"] .pw-divider-line {
+	height: calc(var(--s) * 5);
+	background: var(--c);
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10' viewBox='0 0 20 10'%3E%3Cpath d='M-10 5 Q-5 0 0 5 T10 5 T20 5 T30 5' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") 0 50% / calc(var(--s) * 10) 100% repeat-x;
+	        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10' viewBox='0 0 20 10'%3E%3Cpath d='M-10 5 Q-5 0 0 5 T10 5 T20 5 T30 5' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") 0 50% / calc(var(--s) * 10) 100% repeat-x;
+}
+
+/* the gradient colour: from the line's colour to its end colour, over the whole width */
+.pw-divider[data-line-color="gradient"][data-line-style="solid"] .pw-divider-line:first-child { background: linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c), var(--pw-divider-end))); }
+.pw-divider[data-line-color="gradient"][data-line-style="solid"] .pw-divider-line:last-child { background: linear-gradient(90deg, color-mix(in srgb, var(--c), var(--pw-divider-end)), var(--pw-divider-end)); }
+.pw-divider[data-line-color="gradient"][data-line-style="solid"] .pw-divider-line:only-child { background: linear-gradient(90deg, var(--c), var(--pw-divider-end)); }
+.pw-divider[data-line-color="gradient"]:not([data-line-style="solid"]) .pw-divider-line:last-child,
+.pw-divider[data-line-color="gradient"] .pw-divider-center { --c: var(--pw-divider-end); }
+
+/*-----------------------------------------------------------------------------
+	Effects: running in (05_pwdivider.js: once in view), glow, flowing patterns
+-----------------------------------------------------------------------------*/
+.pw-divider[data-line-effect="glow"] .pw-divider-line,
+.pw-divider[data-line-effect="glow"] .pw-divider-center svg { filter: drop-shadow(0 0 4px var(--c)) drop-shadow(0 0 10px var(--c)); }
+
+.pw-divider[data-line-effect="flow"]:is([data-line-style="dashed"]) .pw-divider-line { animation: pw-divider-flow 1.4s linear infinite; }
+.pw-divider[data-line-effect="flow"]:is([data-line-style="dotted"]) .pw-divider-line { animation: pw-divider-flow-dot 1.4s linear infinite; }
+.pw-divider[data-line-effect="flow"]:is([data-line-style="wavy"]) .pw-divider-line { animation: pw-divider-flow-wave 1.4s linear infinite; }
+.pw-divider[data-line-effect="flow"] .pw-divider-line:last-child:not(:only-child) { animation-direction: reverse; }
+.pw-divider[data-line-effect="flow"] .pw-divider-satellite,
+.pw-divider[data-line-effect="draw"] .pw-divider-satellite { transform-origin: 14px 14px; animation: pw-divider-orbit 4s linear infinite; }
+@keyframes pw-divider-flow { to { background-position-x: calc(var(--s) * 9); } }
+@keyframes pw-divider-flow-dot { to { background-position-x: calc(var(--s) * 3); } }
+@keyframes pw-divider-flow-wave { to { -webkit-mask-position: calc(var(--s) * 10) 50%; mask-position: calc(var(--s) * 10) 50%; } }
+@keyframes pw-divider-orbit { to { transform: rotate(360deg); } }
+
+/* running in: drawn from the centre outwards (one line: from its side) */
+.pw-divider[data-line-effect="draw"] .pw-divider-line { transform-origin: left center; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+.pw-divider[data-line-effect="draw"] .pw-divider-line:first-child:not(:only-child) { transform-origin: right center; }
+.pw-divider[data-line-effect="draw"][data-line-align="right"] .pw-divider-line:only-child { transform-origin: right center; }
+.pw-divider[data-line-effect="draw"][data-line-align="center"] .pw-divider-line:only-child { transform-origin: center; }
+.pw-divider[data-line-effect="draw"] .pw-divider-center { transition: transform .5s .55s cubic-bezier(.3, 1.6, .5, 1), opacity .3s .55s; }
+.pw-divider[data-line-effect="draw"][data-line-play="wait"] .pw-divider-line { transform: scaleX(0); }
+.pw-divider[data-line-effect="draw"][data-line-play="wait"] .pw-divider-center { transform: scale(0); opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+	.pw-divider .pw-divider-line, .pw-divider .pw-divider-center, .pw-divider .pw-divider-satellite { animation: none !important; transition: none !important; }
+}

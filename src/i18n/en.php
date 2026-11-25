@@ -1,0 +1,66 @@
+<?php return array(
+
+	'kirbyblock-divider.name' => 'Divider',
+	'kirbyblock-divider.ai' => 'A line between two sections, optionally with a symbol or a short text in the middle. It marks a change of topic and gives the page some calm.',
+
+	'kirbyblock-divider.style' => 'Line Style',
+	'kirbyblock-divider.linestyle.solid' => 'Solid',
+	'kirbyblock-divider.linestyle.dashed' => 'Dashed',
+	'kirbyblock-divider.linestyle.dotted' => 'Dotted',
+	'kirbyblock-divider.linestyle.double' => 'Double',
+	'kirbyblock-divider.linestyle.fade' => 'Fading',
+	'kirbyblock-divider.linestyle.wavy' => 'Wavy',
+
+	'kirbyblock-divider.center' => 'Centre',
+	'kirbyblock-divider.linecenter.none' => 'Nothing',
+	'kirbyblock-divider.linecenter.circle' => 'Circle',
+	'kirbyblock-divider.linecenter.diamond' => 'Diamond',
+	'kirbyblock-divider.linecenter.orbit' => 'Orbit',
+	'kirbyblock-divider.linecenter.label' => 'Text',
+	'kirbyblock-divider.label' => 'Text in the Centre',
+
+	'kirbyblock-divider.color' => 'Colour',
+	'kirbyblock-divider.linecolor.help' => 'Set the colours per colour variant in the Project Wizard.',
+	'kirbyblock-divider.linecolor.line' => 'Line Colour',
+	'kirbyblock-divider.linecolor.gradient' => 'Gradient',
+
+	'kirbyblock-divider.effect' => 'Effect',
+	'kirbyblock-divider.lineeffect.help' => 'Flowing works with dashed, dotted and wavy lines.',
+	'kirbyblock-divider.lineeffect.none' => 'None',
+	'kirbyblock-divider.lineeffect.draw' => 'Run In',
+	'kirbyblock-divider.lineeffect.glow' => 'Glow',
+	'kirbyblock-divider.lineeffect.flow' => 'Flowing',
+
+	'kirbyblock-divider.stroke' => 'Stroke',
+	'kirbyblock-divider.opacity' => 'Opacity',
+	'kirbyblock-divider.lineopacity.help' => 'For the line and its centre. White at 50 % on blue gives light blue, for example.',
+
+	'kirbyblock-divider.width' => 'Width',
+	'kirbyblock-divider.linewidth.short' => 'Short',
+	'kirbyblock-divider.linewidth.content' => 'Like the Text',
+	'kirbyblock-divider.linewidth.grid' => 'Grid',
+	'kirbyblock-divider.linewidth.full' => 'Screen Edge',
+
+	'kirbyblock-divider.align' => 'Alignment',
+	'kirbyblock-divider.align.help' => 'Only for a short line or text width.',
+	'kirbyblock-divider.align.left' => 'Left',
+	'kirbyblock-divider.align.center' => 'Centre',
+	'kirbyblock-divider.align.right' => 'Right',
+	/* Project Wizard › Divider › Design */
+	'prw.valuegroup.divider' => 'Line',
+	'prw.prop.line-color' => 'Line Colour',
+	'prw.prop.line-color-end' => 'Gradient To',
+	'prw.prop.label-color' => 'Text in the Centre',
+	'prw.prop.line-short-width' => 'Width “Short”',
+	'prw.prop.line-content-width' => 'Width “Like the Text”',
+	'prw.prop.line-center-gap' => 'Gap to the Centre',
+	/* Project Wizard › Divider › Start values */
+	'prw.contentfield.divider' => 'Line',
+	'prw.property.linestyle' => 'Line Style',
+	'prw.property.linecenter' => 'Centre',
+	'prw.property.linecolor' => 'Colour',
+	'prw.property.linewidth' => 'Width',
+	'prw.property.linestroke' => 'Stroke (px)',
+	'prw.property.lineopacity' => 'Opacity (%)',
+	'prw.property.lineeffect' => 'Effect',
+);
