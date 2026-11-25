@@ -1,0 +1,27 @@
+{
+	"name": "kirbydesk/kirbyblock-divider",
+	"version": "1.0.0",
+	"description": "Divider Block for Kirby CMS",
+	"type": "kirby-plugin",
+	"keywords": [
+		"kirby",
+		"kirby-plugin"
+	],
+	"license": "proprietary",
+	"homepage": "https://github.com/kirbydesk/kirbyblock-divider",
+	"authors": [
+		{
+      "name": "Christian Fickinger",
+      "email": "hello@kirbydesk.com",
+      "homepage": "https://kirbydesk.com"
+    }
+	],
+	"extra": {
+		"installer-name": "kirbyblock-divider"
+	},
+	"require": {
+		"getkirby/composer-installer": "^1.2",
+		"kirbydesk/kirby-pagewizard": "^1.0",
+		"kirbydesk/kirby-projectwizard": "^1.0"
+	}
+}
